@@ -66,7 +66,7 @@ If Sophia is reviewing a long list, it's fine to batch the ambiguous cases and a
 - Date properties use expanded form: `date:First Contact Date:start` (ISO date), `date:First Contact Date:is_datetime` = 0. Same for `Latest Contact Date`.
 - `Follow-up Needed`, `Inactive` (checkbox): `__YES__` or `__NO__`
 - `How/Where Met` (select): one of `Dames`, `LI reachout`, `CDO NYC Nov 2025`, `Referral`, `Cold outreach`, `While at IC`, `INFORMS`, `Teradata`, `Rose-Hulman`, `SheLEADS`, `Northwestern`, `Networking Meetup`, `Chamber of Commerce`. Leave blank if not confidently inferable.
-- `Type` (select): one of `Recruiter`, `Peer`, `Manager`, `Client`, `Mentor`, `Direct Report`, `Vendor`, `Partner`, `Investor`, `Pro Bono`, `Estate Planner`, `Mortgage`, `Financial Planner`, `Tax Accountant`, `Marketing`. Leave blank if not confidently inferable.
+- `Type` (select): one of `Recruiter`, `Peer`, `Manager`, `Client`, `Mentor`, `Direct Report`, `Vendor`, `Partner`, `Investor`, `Pro Bono`, `Estate Planner`, `Mortgage`, `Financial Planner`, `Tax Accountant`, `Marketing`. Leave blank if not confidently inferable. **Rule:** anyone whose `Company` resolves to an existing client in the Companies database should be set to `Client`, regardless of their individual role.
 - `What to follow up on` (text)
 
 For new contacts: `notion-create-pages` with `parent: {type: "data_source_id", data_source_id: "2a9da677-edec-80f8-af29-000bfad2bc71"}`. Page body should include a brief Background section, an Action Items list, and key context from the meeting notes.
