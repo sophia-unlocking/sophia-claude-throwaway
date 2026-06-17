@@ -23,11 +23,15 @@ If Sophia named a different window, honor it:
 
 If her phrasing is vague about timing ("recent meetings", "lately") and it materially changes the result, ask a one-line clarifying question before pulling the calendar. Otherwise just proceed and state the range you used.
 
-Pull events with `mcp__721da59c-2d48-44e6-97de-fd9e5a1d6ca7__list_events`, startTime = range start 00:00 America/Denver, endTime = range end 23:59 America/Denver.
+Pull events from **both** calendars using `mcp__721da59c-2d48-44e6-97de-fd9e5a1d6ca7__list_events`, startTime = range start 00:00 America/Denver, endTime = range end 23:59 America/Denver:
+- Primary business calendar (default, no `calendarId` needed)
+- Personal calendar: `calendarId = sophiasull@gmail.com`
+
+Deduplicate by event title + start time — the same meeting may appear on both calendars.
 
 ## Step 2: Filter events
 
-Process only events with at least one attendee whose email is **not** `@unlockinganalytics.com`. Skip:
+Process only events with at least one attendee whose email is **not** `@unlockinganalytics.com` and **not** `sophiasull@gmail.com`. Skip:
 - Solo blocks (no external attendees)
 - Personal/recurring blocks whose summary matches "Organize thoughts", "Focus time", "Lunch", "Block", "Hold", "OOO"
 - Cancelled events (status != "confirmed")
