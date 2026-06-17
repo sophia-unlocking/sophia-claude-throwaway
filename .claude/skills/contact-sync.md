@@ -33,6 +33,7 @@ Deduplicate by event title + start time — the same meeting may appear on both 
 
 Process only events with at least one attendee whose email is **not** `@unlockinganalytics.com` and **not** `sophiasull@gmail.com`. Skip:
 - Solo blocks (no external attendees)
+- Events with more than 5 total attendees (large groups/webinars/cohorts)
 - Personal/recurring blocks whose summary matches "Organize thoughts", "Focus time", "Lunch", "Block", "Hold", "OOO"
 - Cancelled events (status != "confirmed")
 
