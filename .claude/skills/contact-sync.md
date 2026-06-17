@@ -15,7 +15,9 @@ Sync external meeting attendees from Sophia's calendar into her Notion Contacts 
 
 ## Step 1: Establish the date range
 
-Default to **today** (America/Denver). If Sophia named a different window, honor it:
+Default to **today** (America/Denver). Do NOT rely on the system-provided `currentDate` context variable — it reflects UTC and will be wrong for Mountain Time after 6 PM UTC. Instead, determine today's America/Denver date by calling the calendar API with a narrow window around the current moment and reading the timezone offset from the response, or by asking Sophia if there is any ambiguity.
+
+If Sophia named a different window, honor it:
 - "yesterday", "last Tuesday", a specific date → that single day
 - "this week", "the last 3 days", "since Monday" → that range
 
